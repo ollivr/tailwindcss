@@ -1,4 +1,4 @@
-const { Preset, Logger } = require('use-preset');
+const { Preset, Log } = require('use-preset');
 
 module.exports = Preset.make({
 	name: 'Tailwind CSS with Vite',
@@ -8,9 +8,14 @@ module.exports = Preset.make({
 			files: '**/**',
 		},
 	],
-	after: ({ generator }) => {
-		Logger.info(
-			`Use 'yarn' or 'npm install' to install dependencies, then run 'yarn dev' to start Vite.`,
+	after: ({ git }) => {
+		git.context.init();
+		Log.success(
+			`Run ${Log.colors.yellow(
+				'npm install',
+			)} to install dependencies, then run ${Log.colors.yellow(
+				'npm run dev',
+			)} to start Vite.`,
 		);
 	},
 });
