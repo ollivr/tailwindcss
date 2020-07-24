@@ -2,7 +2,7 @@ const { Preset } = require('use-preset');
 const fs = require('fs-extra');
 
 // prettier-ignore
-module.exports = Preset.make('tailwindcss')
+module.exports = Preset.make('Tailwind CSS')
 	.prompts()
 		.if(({ targetDirectory }) => fs.readdirSync(targetDirectory).length === 0)
 		.confirm('Directory is empty. Do you want to scaffold the Vite app?', 'scaffoldVite')
