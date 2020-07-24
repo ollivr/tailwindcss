@@ -1,21 +1,27 @@
-const { Preset, Log } = require('use-preset');
+const { Preset } = require('use-preset');
+const fs = require('fs-extra');
 
-module.exports = Preset.make({
-	name: 'Tailwind CSS with Vite',
-	actions: () => [
-		{
-			type: 'copy',
-			files: '**/**',
-		},
-	],
-	after: ({ git }) => {
-		git.context.init();
-		Log.success(
-			`Run ${Log.colors.yellow(
-				'npm install',
-			)} to install dependencies, then run ${Log.colors.yellow(
-				'npm run dev',
-			)} to start Vite.`,
-		);
-	},
-});
+// prettier-ignore
+module.exports = Preset.make('tailwindcss')
+	.prompts()
+		.if(({ targetDirectory }) => fs.readdirSync(targetDirectory).length === 0)
+		.confirm('Directory is empty. Do you want to scaffold the Vite app?', 'scaffoldVite')
+		.title('Ask to scaffold the application if required')
+		.chain()
+	.command()
+		.run('npx create-vite-app')
+		.if(({ prompts }) => Boolean(prompts.scaffoldVite))
+		.title('Scaffold a Vite application')
+		.chain()
+	.copyTemplates()
+	.editJson('package.json')
+		.title('Add Tailwind CSS as a dependency')
+		.merge({
+			devDependencies: {
+				'tailwindcss': '^1',
+				'@tailwindcss/ui': '^0',
+				'autoprefixer': '9.8'
+			}
+		})
+		.chain()
+	.installDependencies();

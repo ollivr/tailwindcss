@@ -1,9 +1,9 @@
 {
-	"name": "@use-preset/tailwindcss",
-	"version": "0.1.0",
+	"name": "tailwindcss",
 	"license": "MIT",
 	"preset": "src/preset.js",
+	"private": "true",
 	"devDependencies": {
-		"use-preset": "^0.1.0"
+		"use-preset": "^0.1"
 	}
 }
