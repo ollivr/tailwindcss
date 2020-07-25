@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">use-preset tailwindcss</h1>
+  <h1 align="center">Tailwind CSS preset for Vite</h1>
   <p align="center">
     <a href="https://github.com/use-preset/use-preset/releases">
       <img alt="npx use-preset tailwindcss" src="https://img.shields.io/badge/use--preset-preset-blue?style=flat-square">
@@ -19,7 +19,6 @@
 <p>
 
 This preset adds Tailwind CSS to an existing Vite application, or creates one if it doesn't exist in the current directory. To use this preset, run the command above in the directory of your choice. For more information about `use-preset`, please refer to the [documentation](https://docs.usepreset.dev).
-
 
 # Vite
 
