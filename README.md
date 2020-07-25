@@ -11,9 +11,25 @@
   </p>
   <br />
   <p align="center">
-    <code>use-preset</code> is a scaffolding tool for developers. <a href="https://docs.usepreset.dev/">Read the documentation</a> for more informations.
+    Adds Tailwind CSS to an existing Vite application, or creates one if it doesn't exist in the current directory.
   </p>
   <br />
   <pre align="center">npx use-preset tailwindcss</pre>
   &nbsp;
 <p>
+
+This preset adds Tailwind CSS to an existing Vite application, or creates one if it doesn't exist in the current directory. To use this preset, run the command above in the directory of your choice. For more information about `use-preset`, please refer to the [documentation](https://docs.usepreset.dev).
+
+
+# Vite
+
+Vite is an opinionated web devevelopment build tool that serves your code via native ES Module imports during development, and bundles it with [Rollup](https://rollupjs.org/) for production.
+
+- [See its repository](https://github.com/vitejs/vite)
+
+# Tailwind CSS
+
+Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
+
+- [Read its documentation](https://tailwindcss.com/)
+
